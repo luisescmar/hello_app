@@ -8,6 +8,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  
   ############################################
   # Métodos marranetes para testear cosillas #
   ############################################
