@@ -8,7 +8,9 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
-
+  ############################################
+  # Métodos marranetes para testear cosillas #
+  ############################################
   def kakafuti()
     list = { one: "uno", two: "dos", three: "tres" }
     list.each do |key, value|
@@ -17,13 +19,22 @@ module ApplicationHelper
   end
 
   def parents()
-    person1 = {first: "Pepe", last: "Pepe"}
-    person2 = {first: "Manoli", last: "Manoli"}
-    person3 = {first: "Juanito", last: "Juanito"}
-    #params = {father: person1, mother: person2, child: person3}
-    params[:father] = person1
-    params[:mother] = person2
-    params[:child] = person3
+    @person1 = {first: "Pepe", last: "Pepe"}
+    @person2 = {first: "Manoli", last: "Manoli"}
+    @person3 = {first: "Juanito", last: "Juanito"}
+    @params = {father: @person1, mother: @person2, child: @person3}
+    #params = {:father=>person1, :mother=>person2, :child=>person3}
+    #params[:father] = person1
+    #params[:mother] = person2
+    #params[:child] = person3
 
-    params[:father][:first]
+    @params[:father][:first]
+  end
+
+  def random()
+    @me = {name:"Yo", email:"yo@mismo.com"}
+    @pass = ('a'..'z').to_a.shuffle[0..16].join
+    @me[:pass] = @pass
+    @me
+  end
 end
